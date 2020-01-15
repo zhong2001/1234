@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <title>玊尔</title>  
+    <head>
+        <meta charset="utf-8">
+        <style>
+         *{margin: 0;padding: 0;}
+         body{background: rgb(3, 110, 117);}
+         #div1{width:150px; height: 200px; background: bisque;position: absolute; left:-150px; top:550px;}
+            #div1 span{position: absolute; width:20px; height:60px; line-height: 20px; background:brown; right: -20px;top:50px;} 
+            #div2 div{position: relative;}
+            #div2{height: 40px;width:1300px;/*border:1px solid black;*/margin: auto;font: size 12px;font-family:fantasy;color: white;}
+            #div2 a{color: whitesmoke;}
+            #txt1{width:500px;height: 25px;margin-left:20px;margin-top: 3px;font-size: small;}
+            .size1{margin:5px;padding-left: 10px;width: 40px;height: 30px;float:left;}
+            .size2{margin:5px;width: 80px;height: 30px;float:right;/*background: blanchedalmond;*/}
+            #div3 {width:1300px;height:1px;margin: auto;left:auto;background:  black;}
+            #img1{position: absolute;width:200px;height: 200px;top:300px;left:600px;}
+            #img2{position: absolute;top:190px;left:80px;width:300px;height: 500px;}
+            .font-size1{font-size: 80px;color: red;}
+            #div4{position: absolute;left:400px;width:100px;height: 200px;font-size: 80px;top:300px;color: whitesmoke;}
+            #div5{position: absolute;right:400px;width:100px;height: 200px;font-size: 80px;top:300px;color: crimson;}
+            #img3{position: absolute;top:190px;right:80px;width:300px;height: 500px;}
+            #div6 img{position: absolute;top:190px;right:80px;width:300px;height: 500px;}
+            #div7{float: left;width: 400px;height: 60px;font-size: 50px;position: absolute;left:540px;top:200px;}
+            #div8{float: left;width: 400px;height: 60px;font-size: 50px;position: absolute;left:540px;top:550px;}
+        </style>
+        <script>
+            window.onload=function() 
+            {
+                var odiv1=document.getElementById('div1');
+
+                odiv1.onmouseover=function()
+                {
+                    startmove1(10,0);
+                }
+                odiv1.onmouseout=function()
+                {
+                    startmove1(-10,-150);
+                }
+
+                var timer1=null;               
+                function startmove1(speed,itarget)
+                {
+                    var odiv1=document.getElementById('div1');
+
+                    clearInterval(timer1);
+                    timer1=setInterval(function()
+                    {
+                        if(odiv1.offsetLeft==itarget)
+                        {
+                            clearInterval(timer1);
+                        }
+                        else
+                        {
+                            odiv1.style.left=odiv1.offsetLeft+speed+'px';
+                        }
+                    },30)
+                }        
+                
+                var odiv6=document.getElementById('div6');
+                var aimg=document.getElementsByTagName('img');
+                var n=3;
+
+                var timer2=null;
+
+                clearInterval(timer2);
+                timer2=setInterval(
+                    function move()
+                    {
+                        if(n>5)
+                        {
+                            n=3;
+                        }
+                        odiv6.innerHTML="<img src='p"+n+".jpeg' >";
+                        n++;
+                    },1000)
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div2" >           
+            <div class="size1"><a href="#">主页</a></div>
+            <input id="txt1" type="text" placeholder="少年的你" />
+            <input type="button" value="搜索"/>
+            <div class="size2"><a href="#">玊尔</a></div>
+            <div class="size2"><a href="https://zhong2001.github.io/-/燚.html">燚</a></div>
+        </div>
+        <div id="div3" style="z-index: 2;"></div>
+        <div id="div1" style="font-size:16px; text-align:center;float:left;position:relative;z-index: 2;">
+            <a href="https://passport.weibo.com/wbsso/logout?r=https%3A%2F%2Fweibo.com&returntype=1" target="_blank">微博</a><br>       
+            <a href="https://qzone.qq.com" target="_blank">QQ</a><br>
+            <a href="">微信</a><br>
+            <a href="">Facebook</a><br>
+            <a href="">邮箱</a><br>
+            <span >分享到</span>
+        </div>
+        <div class="font-size1">玊尔</div>
+        <div><img src="p2.png" id="img1"></div>
+        <div><img src="000.jpeg" id="img2"></div>
+        <div id="div4">自我</div>
+        <div id="div5">本我</div>
+        <div id="div6"><img src="p3.jpeg" id="img3"></div>
+        <div id="div7">既不与世界为伍</div>
+        <div id="div8">也不与自我为敌</div>
+    </body>
+</html>
