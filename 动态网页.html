@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>主页</title>
         <meta charset="utf-8">
-        <style>
+        <style> 
+            body{background:rgb(134, 15, 15);}           
             /*分享到*/
             #div1{width:150px; height: 200px; background: bisque;position: absolute; left:-150px; top:550px;}
             #div1 span{position: absolute; width:20px; height:60px; line-height: 20px; background: pink; right: -20px;top:50px;}           
             /*分享到*/         
             #div2 div{position: relative;}
             #div2{height: 40px;width:1300px;/*border:1px solid black;*/margin: auto;font: size 12px;font-family:fantasy;color: white;}
-            #div2 a{color: black;}
+            #div2 a{color: white;}
             #txt1{width:500px;height: 25px;margin-left:20px;margin-top: 3px;font-size: small;}
             .size1{margin:5px;padding-left: 10px;width: 40px;height: 30px;float:left;}
             .size2{margin:5px;width: 80px;height: 30px;float:right;/*background: blanchedalmond;*/}
             #div3 {width:1300px;height:1px;margin: auto;left:auto;background:  black;}
         </style>
         <style>
-            *{margin:0;padding:0;}
-            /*#div4 {width:1050px;height: 270px;position: relative;margin:auto 196px;background: red;} */
-            /*#div4 {width:800px;height:270px;float:left;list-style: none;text-align: center;background: brown;}   */        
+            *{margin:0;padding:0;}              
             #div4 img{width:350px;height:270px;left:200px;position: relative;top:20px;} 
             #div5 {width:25px;height:135px;position: relative;top:50px;left:125px;font-size: 25px;background: blanchedalmond;float: left;}  
-            #div7 {width:25px;height:135px;position: absolute;top:87px;right:266px;font-size: 25px;background: blanchedalmond;float: right;}
-            /*#div4 ul li{width:350px;height:270px;float: left;list-style: none;}
-            #div4 ul {position: absolute;left:0;top:0;}
-            #btn1 {position: relative;}
-            #btn2{position: relative;}*/
+            #div7 {width:25px;height:135px;position: absolute;top:87px;right:266px;font-size: 25px;background: blanchedalmond;float: right;}            
         </style>
         <style>
             #div6{width: 200px;height: 500px;left:10px;border: 1px solid brown;top:80px;position: absolute;background: burlywood;float: left;}
-           .active{text-align: justify;}
-            #div6 a{color: black;}
-            
+            #div20 div{width:200px;height: 300px;display: none;}
+           #div6 .active{background: burlywood;}
+            #div6 a{color: black;}           
         </style>
         <style>
             #div8{width: 200px;height: 500px;right:10px;border: 1px solid brown;top:80px;position: absolute;background: burlywood;float: right;}
@@ -106,37 +102,27 @@
                     odiv4.innerHTML="<img src='"+n+".jpeg'>"+"<img src='"+x+".jpeg'>";
                     n++;
                     x-=1;
-                },1000)
-                
+                },1000)                 
+                        
 
-                /*odiv4.onmouseover=function()
-                {
-                    clearInterval(timer3);
-                }
-                odiv4.onmouseout=function()
-                {
-                    timer3=setInterval(move,1000);
-                }*/
+          var odiv20=document.getElementById('div20');
+          var odiv21=document.getElementById('div21');
+          var aA=odiv21.getElementsByTagName('a');
+          var adiv20=odiv20.getElementsByTagName('div');
 
-            
-               
-          var odiv6=document.getElementById('div6');
-          var aA6=odiv6.getElementsByTagName('a');
-          var adiv6=odiv6.getElementsByTagName('div');
 
-          for(var i=0;i<aA6.length;i++)
+          for(var i=0;i<aA.length;i++)
           {
-             aA6[i].index=i;
-             aA6[i].onclick=function ()
+             aA[i].index=i;
+             aA[i].onclick=function ()
              {
-                for(var i=0;i<aA6.length;i++)
+                for(var i=0;i<aA.length;i++)
                 {
-                 aA6[i].className='';
-                 adiv6[i].style.display='none';
+                 aA[i].className='';
+                 adiv20[i].style.display='none';
                 } 
                 this.className='active';
-                adiv6[this.index].style.display='block';
-               
+                adiv20[this.index].style.display='block';              
              }
           }
 
@@ -158,22 +144,16 @@
                 setInterval(tick,1000);
                 tick();
         }
-         
-       
-        
-        
-        
         </script>
-
     </head>
      
     <body >
         <div id="div2" >           
-            <div class="size1"><a href="#">主页</a></div>
+            <div class="size1"><a href="https://zhong2001.github.io/1234/动态网页.html">主页</a></div>
             <input id="txt1" type="text" placeholder="少年的你" />
             <input type="button" value="搜索"/>
-            <div class="size2"><a href="#">登录</a></div>
-            <div class="size2"><a href="#">个人页面</a></div>
+            <div class="size2"><a href="https://zhong2001.github.io/1234/玊尔.html">玊尔</a></div>
+            <div class="size2"><a href="https://zhong2001.github.io/1234/燚.html">燚</a></div>
         </div>
         <div id="div3" style="z-index: 2;"></div>
         <div id="div1" style="font-size:16px; text-align:center;float:left;position:relative;z-index: 2;">
@@ -187,24 +167,25 @@
     </body>
     <body id="bd1">    
         <div id="div6" style="z-index: 1;text-align: justify;">
+            <div id="div21" class="active">
                 简介<br><br>
                 <a href="#">个人经历</a>
                 <a href="#">代表作</a>
                 <a href="#">舞蹈作品</a>                         
                 <br><br>
-                <div class=".active" style="display:block;">易烊千玺2000年出生于湖南怀化，“烊”在其家乡湖南怀化是“欢迎”的意思。为了迎接、纪念千禧年，家人为他取名易烊千玺。
+            </div>
+            <div id="div20" >
+                <div style="display:block;">易烊千玺2000年出生于湖南怀化，“烊”在其家乡湖南怀化是“欢迎”的意思。为了迎接、纪念千禧年，家人为他取名易烊千玺。
                     2岁学艺，5岁开始学舞并开始在电视上表演节目。2005年11月，年仅5岁的易烊千玺参与北京电视台青少频道《才艺训练营》节目，获得周冠军。
-                    2007年5月，受到中央电视台少儿频道《智慧树》栏目邀请，担任小老……<a href="https://baike.baidu.com/item/易烊千玺/221450?fr=aladdin" target="_blank">查看更多</a></div>
-                <div>参演电影<br>《少年的你》<br>《致命追击》（客串）<br>参演电视剧<br> 《长安十二时辰》<br> 《我们的少年时代》<br> 《超少年密码》《小别离》<br>
+                    2007年5月，受到中央电视台少儿频道《智慧树》栏目邀请，担任小老……<a href="https://baike.baidu.com/item/易烊千玺/221450?fr=aladdin" target="_blank">查看更多</a>
+                </div>
+                <div>参演电影<br>《少年的你》<br>《致命追击》（客串）<br><br>参演电视剧<br> 《长安十二时辰》<br> 《我们的少年时代》<br> 《超少年密码》《小别离》<br><br>
                     音乐作品(专辑)<br>《青春修炼手册》<br>《魔法城堡》<br>《Heart梦·出发》<br>《大梦想家》<br>《我乐意沉默释放内心焰火》
-
                 </div>
                 <div>
                     《Niggas In Paris》<br>《Slow And Easy》<br>《Dancerss》<br>《Tell Me why》<br>《Dark Times》<br>《Belief》<br>《Wild》<br>《Growing》<br>《游离之间》<br>《When You Want to Love》
                 </div>
-                <div>易烊千玺2000年出生于湖南怀化，“烊”在其家乡湖南怀化是“欢迎”的意思。为了迎接、纪念千禧年，家人为他取名易烊千玺。
-                    2岁学艺，5岁开始学舞并开始在电视上表演节目。2005年11月，年仅5岁的易烊千玺参与北京电视台青少频道《才艺训练营》节目，获得周冠军。
-                    2007年5月，受到中央电视台少儿频道《智慧树》栏目邀请，担任小老……查看更多</div>         
+            </div>    
         </div>
         <div id="div5" >易<br>烊<br>千<br>玺 <br> 
         </div>
